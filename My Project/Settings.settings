@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="ExportFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">None</Value>
+    </Setting>
+    <Setting Name="BudgetSettingsFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\astarr\Documents\Visual Studio 2012\Projects\Expense Parser\BudgetSettings.xml</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
