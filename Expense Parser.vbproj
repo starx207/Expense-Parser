@@ -75,6 +75,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.vb" />
     <Compile Include="CSVItem.vb" />
     <Compile Include="CSVList.vb" />
     <Compile Include="ExportDestination.Designer.vb">
