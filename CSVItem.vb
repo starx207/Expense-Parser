@@ -1,23 +1,6 @@
 ﻿Public Class CSVItem
-    Private TransactionDate As String
-    Public Property TransDate() As String
-        Get
-            Return TransactionDate
-        End Get
-        Set(ByVal value As String)
-            TransactionDate = value
-        End Set
-    End Property
-
-    Private PayeeName As String
-    Public Property Payee() As String
-        Get
-            Return PayeeName
-        End Get
-        Set(ByVal value As String)
-            PayeeName = value
-        End Set
-    End Property
+    Public Property TransDate As String
+    Public Property Payee As String
 
     Private TransactionAmount As String
     Public Property Amount() As String
