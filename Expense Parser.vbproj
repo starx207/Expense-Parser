@@ -75,8 +75,10 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SharedConstantsAndTypes.vb" />
     <Compile Include="CSVItem.vb" />
     <Compile Include="CSVList.vb" />
+    <Compile Include="ExcelExporter.vb" />
     <Compile Include="ExportDestination.Designer.vb">
       <DependentUpon>ExportDestination.vb</DependentUpon>
     </Compile>
@@ -90,7 +92,8 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListOfBudgetCategories.vb" />
+    <Compile Include="HelperFunctions.vb" />
+    <Compile Include="Budget.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -107,6 +110,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="BudgetCategory.vb" />
+    <Compile Include="SettingsManager.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ExportDestination.resx">

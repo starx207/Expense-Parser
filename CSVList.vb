@@ -1,14 +1,20 @@
-﻿Public Class CSVList
+﻿Imports Microsoft.VisualBasic.FileIO
+
+Public Class CSVList
+    Private ReadOnly AllowableDateColumns As String() = {"DATE", "TRANSACTION DATE"}
+    Private ReadOnly AllowablePayeeColumns As String() = {"PAYEE NAME", "MERCHANT"}
+    Private ReadOnly AllowableAmountColumns As String() = {"AMOUNT", "BILLING AMOUNT"}
+
     Private UniqueCSVs As New List(Of String)
-    Private AllCSV As New List(Of CSVItem)
+    Public Property GenericList As List(Of CSVItem)
     Public ReadOnly Property Length() As Integer
         Get
-            Return AllCSV.Count
+            Return GenericList.Count
         End Get
     End Property
     Public ReadOnly Property Item(ByVal i As Integer) As CSVItem
         Get
-            Return AllCSV.Item(i)
+            Return GenericList.Item(i)
         End Get
     End Property
     Public ReadOnly Property UniqueItems() As List(Of String)
@@ -16,18 +22,10 @@
             Return UniqueCSVs
         End Get
     End Property
-    Public Property GenericList() As List(Of CSVItem)
-        Get
-            Return AllCSV
-        End Get
-        Set(value As List(Of CSVItem))
-            AllCSV = value
-        End Set
-    End Property
 
     Public Function IndexOf(ByVal payee As String) As Integer
         Dim i As Integer = 0
-        For Each csv As CSVItem In AllCSV
+        For Each csv As CSVItem In GenericList
             If csv.Payee = payee Then
                 Return i
             End If
@@ -37,11 +35,11 @@
     End Function
 
     Public Sub RemoveAt(ByVal i As Integer)
-        Dim payeeRemoved As String = AllCSV(i).Payee
-        AllCSV.RemoveAt(i)
+        Dim payeeRemoved As String = GenericList(i).Payee
+        GenericList.RemoveAt(i)
 
         ' Check if the payee has other occurances
-        For Each csv As CSVItem In AllCSV
+        For Each csv As CSVItem In GenericList
             If csv.Payee = payeeRemoved Then
                 Exit Sub
             End If
@@ -50,18 +48,13 @@
         UniqueCSVs.Remove(payeeRemoved)
     End Sub
 
-    Public Sub Clear()
-        AllCSV.Clear()
-        UniqueCSVs.Clear()
-    End Sub
-
     Public Sub Add(ByVal csvDate As String, ByVal csvName As String, ByVal csvAmt As String)
         Dim newCSV As New CSVItem
         newCSV.TransDate = csvDate
         newCSV.Payee = csvName
         newCSV.Amount = csvAmt
 
-        AllCSV.Add(newCSV)
+        GenericList.Add(newCSV)
 
         If UniqueCSVs.IndexOf(csvName) = -1 Then
             UniqueCSVs.Add(csvName)
@@ -70,6 +63,54 @@
     End Sub
 
     Public Sub Add(ByVal item As CSVItem)
-        Me.Add(item.TransDate, item.Payee, item.Amount)
+        Add(item.TransDate, item.Payee, item.Amount)
+    End Sub
+
+    Sub New()
+        GenericList = New List(Of CSVItem)
+    End Sub
+
+    Sub New(ByVal csv As TextFieldParser)
+        GenericList = New List(Of CSVItem)
+        Dim currentRow As String()
+        Dim dateIndex As Integer
+        Dim payeeIndex As Integer
+        Dim amountIndex As Integer
+        Dim columnName As String
+
+        csv.TextFieldType = FieldType.Delimited
+        csv.SetDelimiters(",")
+
+        ' Set indexes for relavant columns
+        currentRow = csv.ReadFields() ' Read header Row
+        If currentRow IsNot Nothing Then
+            For i As Integer = 0 To currentRow.Length - 1
+                columnName = currentRow.GetValue(i).ToString().ToUpper()
+                Select Case True
+                    Case AllowableDateColumns.Contains(columnName)
+                        dateIndex = i
+                    Case AllowablePayeeColumns.Contains(columnName)
+                        payeeIndex = i
+                    Case AllowableAmountColumns.Contains(columnName)
+                        amountIndex = i
+                    Case Else
+                        ' Do Nothing
+                End Select
+            Next
+        End If
+
+        While Not csv.EndOfData
+            Try
+                currentRow = csv.ReadFields()
+                If currentRow IsNot Nothing Then
+                    Add(currentRow.GetValue(dateIndex),
+                        currentRow.GetValue(payeeIndex),
+                        currentRow.GetValue(amountIndex))
+                End If
+            Catch
+            End Try
+        End While
+
+        csv.Close()
     End Sub
 End Class

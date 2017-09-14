@@ -4,9 +4,10 @@ Imports System.Xml
 Public Class Form1
 #Region "Variables"
     Private CSVItems As New CSVList
-    Private budget As New ListOfBudgetCategories
+    Private budget As New Budget
     Private settingsFile As New XmlDocument
     Private fileLoaded As Boolean
+    Private settingMngr As New SettingsManager
 #End Region
 
 #Region "Contructor/ Form Events"
@@ -21,102 +22,21 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
-        If LoadNewSettingsFile(My.Settings.BudgetSettingsFile) Then
-            LoadSettings()
+        settingsFile = settingMngr.LoadNewSettingsFile(My.Settings.BudgetSettingsFile)
+        If settingsFile IsNot Nothing Then
+            budget = settingMngr.LoadSettings(settingsFile)
+            txtTotalBudget.Text = budget.TotalBudget.ToString(CurrencyFormat)
         End If
     End Sub
 
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        If Not SaveSettingsFile() Then
+        If Not settingMngr.SaveSettingsFile(budget) Then
             MessageBox.Show("An error occurred while saving budget file" & vbCrLf & "Location: " & My.Settings.BudgetSettingsFile, "", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
 #End Region
 
 #Region "Methods"
-    Private Function SaveSettingsFile() As Boolean
-        Try
-            Dim settings As New XmlWriterSettings
-            settings.Indent = True
-
-            Using writer As XmlWriter = XmlWriter.Create(My.Settings.BudgetSettingsFile, settings)
-                writer.WriteStartDocument()
-                writer.WriteStartElement("MonthlyBudget")
-                writer.WriteElementString("TotalBudget", txtTotalBudget.Text.Replace("$", ""))
-
-                For Each category As BudgetCategory In budget.GenericList
-                    writer.WriteStartElement("Category")
-                    writer.WriteElementString("Name", category.Name)
-                    writer.WriteElementString("Type", category.Type)
-                    writer.WriteElementString("Budget", category.Budget.ToString())
-                    writer.WriteStartElement("Payees")
-                    For Each payeeName As String In category.Payees
-                        writer.WriteElementString("Name", payeeName)
-                    Next
-                    writer.WriteEndElement()
-                    writer.WriteEndElement()
-                Next
-
-                writer.WriteEndElement()
-                writer.WriteEndDocument()
-            End Using
-
-            Return True
-        Catch ex As Exception
-            Return False
-        End Try
-    End Function
-
-    Private Function LoadNewSettingsFile(ByVal fileName As String) As Boolean
-        Try
-            settingsFile.Load(fileName)
-            fileLoaded = True
-        Catch ex As Exception
-            MessageBox.Show("Could not find Settings File. Please specify a new setting file", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            fileLoaded = False
-        End Try
-
-        btnBrowse.Enabled = fileLoaded
-        Return fileLoaded
-    End Function
-
-    Private Sub LoadSettings()
-        budget.GenericList.Clear()
-        Dim newCategory As BudgetCategory
-        If settingsFile.SelectSingleNode("MonthlyBudget/TotalBudget") IsNot Nothing Then
-            txtTotalBudget.Text = "$" & settingsFile.SelectSingleNode("MonthlyBudget/TotalBudget").InnerText
-        Else
-            txtTotalBudget.Text = "$0.00"
-        End If
-        For Each budgetItem As XmlNode In settingsFile.SelectNodes("MonthlyBudget/Category")
-            newCategory = New BudgetCategory
-            If budgetItem("Name") IsNot Nothing Then
-                newCategory.Name = budgetItem("Name").InnerText
-            End If
-            If budgetItem("Type") IsNot Nothing Then
-                newCategory.Type = budgetItem("Type").InnerText
-            End If
-            If budgetItem("Budget") IsNot Nothing Then
-                newCategory.Budget = CDbl(budgetItem("Budget").InnerText)
-            End If
-            If budgetItem("Payees") IsNot Nothing Then
-                For Each payee As XmlNode In budgetItem.SelectNodes("Payees/Name")
-                    newCategory.Payees.Add(payee.InnerText)
-                Next
-                newCategory.Payees.Sort()
-            End If
-
-            budget.GenericList.Add(newCategory)
-        Next
-    End Sub
-
-    Private Sub ShowContent()
-        ' Display Payee info
-        showPayees()
-
-        ' Display budget info
-        showBudget()
-    End Sub
 
     Private Sub showPayees()
         pnlPayees.Controls.Clear()
@@ -167,8 +87,8 @@ Public Class Form1
 
     Private Sub showBudget()
         pnlBudget.Controls.Clear()
-        For i As Integer = 0 To budget.GenericList.Count - 1
-            Dim category As BudgetCategory = budget.GenericList(i)
+        For i As Integer = 0 To budget.Categories.Count - 1
+            Dim category As BudgetCategory = budget.Categories(i)
             Dim newX As New Label
             newX.Location = New Point(0, 4 + (i * 25))
             newX.AutoSize = True
@@ -189,7 +109,7 @@ Public Class Form1
             newIE.Name = "ie" & category.Name
             newIE.Font = New Font("Times New Roman", 10)
             newIE.TextAlign = ContentAlignment.MiddleCenter
-            newIE.Text = category.Type
+            newIE.Text = category.Type.GetEnumDescription()
             newIE.Cursor = Cursors.Hand
             Dim ieTT As New ToolTip
             ieTT.SetToolTip(newIE, "Toggle Expense/Income")
@@ -206,7 +126,7 @@ Public Class Form1
             newTxtBox.Location = New Point(15 + 17, i * 25)
             newTxtBox.Size = New Size(90, 22)
             newTxtBox.Name = "txt" & category.Name
-            newTxtBox.Text = "$" & category.Budget.ToString()
+            newTxtBox.Text = category.Budget.ToString(CurrencyFormat)
             AddHandler newTxtBox.Leave, AddressOf amount_changed
 
             pnlBudget.Controls.Add(newX)
@@ -216,53 +136,8 @@ Public Class Form1
         Next
     End Sub
 
-    Private Sub PopulateCSVItems(ByVal csv As TextFieldParser)
-        CSVItems.Clear()
-        Dim currentRow As String()
-        Dim DateIndex As Integer
-        Dim PayeeIndex As Integer
-        Dim AmountIndex As Integer
-
-        csv.TextFieldType = FieldType.Delimited
-        csv.SetDelimiters(",")
-
-        ' Set indexes for relavant columns
-        currentRow = csv.ReadFields() ' Read header row
-        If currentRow IsNot Nothing Then
-            For i As Integer = 0 To currentRow.Length - 1
-                Select Case Trim(currentRow.GetValue(i).ToString().ToUpper())
-                    Case "DATE", "TRANSACTION DATE"
-                        DateIndex = i
-                    Case "PAYEE NAME", "MERCHANT"
-                        PayeeIndex = i
-                    Case "AMOUNT", "BILLING AMOUNT"
-                        AmountIndex = i
-                    Case Else
-                        ' Do Nothing
-                End Select
-            Next
-        End If
-
-        While Not csv.EndOfData
-            Try
-                currentRow = csv.ReadFields()
-                If currentRow IsNot Nothing Then
-                    CSVItems.Add(currentRow.GetValue(DateIndex),
-                                 currentRow.GetValue(PayeeIndex),
-                                 currentRow.GetValue(AmountIndex))
-                End If
-            Catch ex As MalformedLineException
-                MessageBox.Show("Line " & ex.Message & " is not valid and will be skipped")
-            End Try
-        End While
-
-        csv.Close()
-
-        ShowContent()
-    End Sub
-
     Private Sub setIEColor(ByRef label As Label)
-        If label.Text = "E" Then
+        If label.Text = BudgetTypes.Expense.GetEnumDescription() Then
             label.ForeColor = Color.Red
         Else
             label.ForeColor = Color.Green
@@ -283,7 +158,9 @@ Public Class Form1
         If ofdSourceFile.ShowDialog() = Windows.Forms.DialogResult.OK Then
             txtSourcePath.Text = ofdSourceFile.FileName
             btnExport.Enabled = True
-            PopulateCSVItems(New TextFieldParser(ofdSourceFile.FileName))
+            CSVItems = New CSVList(New TextFieldParser(ofdSourceFile.FileName))
+            showPayees()
+            showBudget()
             lblBudgetTitle.Show()
             lblPayeeTitle.Show()
         End If
@@ -297,15 +174,18 @@ Public Class Form1
         End If
 
         If ofdSettingFile.ShowDialog() = Windows.Forms.DialogResult.OK Then
-            If LoadNewSettingsFile(ofdSettingFile.FileName) Then
+            settingsFile = settingMngr.LoadNewSettingsFile(ofdSettingFile.FileName)
+            If settingsFile IsNot Nothing Then
                 My.Settings.BudgetSettingsFile = ofdSettingFile.FileName
                 My.Settings.Save()
-                LoadSettings()
+                budget = settingMngr.LoadSettings(settingsFile)
+                txtTotalBudget.Text = budget.TotalBudget.ToString(CurrencyFormat)
             End If
         End If
 
         If CSVItems.Length > 0 Then
-            ShowContent()
+            showPayees()
+            showBudget()
         End If
     End Sub
 
@@ -340,7 +220,7 @@ Public Class Form1
         If cmbBox IsNot Nothing Then
 
             If cmbBox.Text = "" Then
-                cmbBox.Text = "Misc"
+                cmbBox.Text = UnassignedPayeeType
             End If
 
             If budget.ReassignPayee(cmbBox.Name.Substring(3), cmbBox.Text) Then
@@ -367,12 +247,12 @@ Public Class Form1
         Dim ieLabel = TryCast(sender, Label)
         If ieLabel IsNot Nothing Then
             Dim categoryName As String = ieLabel.Name.Substring(2)
-            If ieLabel.Text = "E" Then
-                budget.GetCategoryByName(categoryName).Type = "I"
-                ieLabel.Text = "I"
+            If ieLabel.Text = BudgetTypes.Expense.GetEnumDescription() Then
+                budget.GetCategoryByName(categoryName).Type = BudgetTypes.Income
+                ieLabel.Text = BudgetTypes.Income.GetEnumDescription()
             Else
-                budget.GetCategoryByName(categoryName).Type = "E"
-                ieLabel.Text = "E"
+                budget.GetCategoryByName(categoryName).Type = BudgetTypes.Expense
+                ieLabel.Text = BudgetTypes.Expense.GetEnumDescription()
             End If
             setIEColor(ieLabel)
         End If
@@ -404,6 +284,7 @@ Public Class Form1
             txtTotalBudget.BackColor = Color.Red
             Exit Sub
         End If
+        budget.TotalBudget = amount
 
         If txtTotalBudget.Text.Substring(0, 1) <> "$" Then
             txtTotalBudget.Text = "$" & txtTotalBudget.Text
@@ -411,19 +292,14 @@ Public Class Form1
     End Sub
 
     Private Sub btnExport_Click() Handles btnExport.Click
-        Dim amount As Decimal
-        If Not Decimal.TryParse(txtTotalBudget.Text.Replace("$", ""), amount) Then
-            MessageBox.Show("Cannot export until a valid amount is entered for Total Budget", "", MessageBoxButtons.OK, MessageBoxIcon.Stop)
-            Exit Sub
-        End If
-        If amount = 0 Then
+        If budget.TotalBudget = 0 Then
             MessageBox.Show("Cannot export until an amount > 0 is entered for Total Budget", "", MessageBoxButtons.OK, MessageBoxIcon.Stop)
             Exit Sub
         End If
         budget.AssignCategoryUsedStatus(CSVItems)
-        Dim newExportWin As New ExportDestination
-        newExportWin.prepareExport(CSVItems, budget, amount)
+        Dim newExportWin As New ExportDestination(CSVItems, budget)
+        newExportWin.Show()
     End Sub
 #End Region
-    
+
 End Class
