@@ -1,7 +1,6 @@
 ﻿Public Class CSVItem
     Public Property TransDate As String
     Public Property Payee As String
-
     Private TransactionAmount As String
     Public Property Amount() As String
         Get
