@@ -1,0 +1,5 @@
+merchant,TRANSACTION date,   billing amount
+Payee1,12/12/2017,20.00
+Payee2,12/12/2017,$30.00
+Payee3,12/12/2017,40.00
+Payee4,12/12/2017,49.00
