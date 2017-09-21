@@ -113,7 +113,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="packages.config" />
-    <None Include="TestResources\CSVImportTestFile.csv" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Expense Parser.vbproj">

@@ -8,6 +8,12 @@ Imports Microsoft.VisualBasic.FileIO
 
     Private Const TestResourcesFolder As String = "..\..\TestResources\"
 
+    Sub New()
+        If Not Directory.Exists(TestResourcesFolder) Then
+            Directory.CreateDirectory(TestResourcesFolder)
+        End If
+    End Sub
+
     <TestMethod>
     Public Sub CSVList_ClassExists()
         Dim csvItem As Object
