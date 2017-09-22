@@ -6,13 +6,13 @@ Public Class CSVList
     Private ReadOnly AllowableAmountColumns As String() = {"AMOUNT", "BILLING AMOUNT"}
 
     Private UniqueCSVs As New List(Of String)
-    Public Property GenericList As List(Of CSVItem)
+    Public Property GenericList As List(Of ICSVItem)
     Public ReadOnly Property Length() As Integer
         Get
             Return GenericList.Count
         End Get
     End Property
-    Public ReadOnly Property Item(ByVal i As Integer) As CSVItem
+    Public ReadOnly Property Item(ByVal i As Integer) As ICSVItem
         Get
             Return GenericList.Item(i)
         End Get
@@ -25,7 +25,7 @@ Public Class CSVList
 
     Public Function IndexOf(ByVal payee As String) As Integer
         Dim i As Integer = 0
-        For Each csv As CSVItem In GenericList
+        For Each csv As ICSVItem In GenericList
             If csv.Payee = payee Then
                 Return i
             End If
@@ -39,7 +39,7 @@ Public Class CSVList
         GenericList.RemoveAt(i)
 
         ' Check if the payee has other occurances
-        For Each csv As CSVItem In GenericList
+        For Each csv As ICSVItem In GenericList
             If csv.Payee = payeeRemoved Then
                 Exit Sub
             End If
@@ -62,16 +62,16 @@ Public Class CSVList
         End If
     End Sub
 
-    Public Sub Add(ByVal item As CSVItem)
+    Public Sub Add(ByVal item As ICSVItem)
         Add(item.TransDate, item.Payee, item.Amount)
     End Sub
 
     Sub New()
-        GenericList = New List(Of CSVItem)
+        GenericList = New List(Of ICSVItem)
     End Sub
 
     Sub New(ByVal csv As TextFieldParser)
-        GenericList = New List(Of CSVItem)
+        GenericList = New List(Of ICSVItem)
         Dim currentRow As String()
         Dim dateIndex As Integer
         Dim payeeIndex As Integer

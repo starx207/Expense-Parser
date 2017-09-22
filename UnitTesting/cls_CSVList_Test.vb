@@ -16,11 +16,11 @@ Imports Microsoft.VisualBasic.FileIO
 
     <TestMethod>
     Public Sub CSVList_ClassExists()
-        Dim csvItem As Object
+        Dim csvList As Object
         Try
-            csvItem = New CSVList
+            csvList = New CSVList
         Catch
-            Throw New NotImplementedException("Class ""CSVList"" not implemented")
+            Assert.Fail("Class ""CSVList"" not implemented")
         End Try
 
         ' Test passes if it gets here
@@ -31,7 +31,7 @@ Imports Microsoft.VisualBasic.FileIO
     Public Sub CSVList_HasAGenericListProperty()
         Dim testList As New CSVList
 
-        Dim input As New List(Of CSVItem) From {New CSVItem, New CSVItem}
+        Dim input As New List(Of ICSVItem) From {New mock_CSVItem, New mock_CSVItem}
 
         testList.GenericList = input
 
@@ -42,7 +42,7 @@ Imports Microsoft.VisualBasic.FileIO
     Public Sub CSVList_LengthPropertyReturnsGenericListLength()
         Dim testList As New CSVList
 
-        testList.GenericList = New List(Of CSVItem) From {New CSVItem, New CSVItem, New CSVItem, New CSVItem}
+        testList.GenericList = New List(Of ICSVItem) From {New mock_CSVItem, New mock_CSVItem, New mock_CSVItem, New mock_CSVItem}
 
         Dim expectedCount As Integer = 4
 
@@ -52,10 +52,10 @@ Imports Microsoft.VisualBasic.FileIO
     <TestMethod>
     Public Sub CSVList_ItemPropertyReturnsCorrespondingItemInGenericList()
         Dim testList As New CSVList
-        Dim input As New CSVItem
+        Dim input As New mock_CSVItem
         Dim index As Integer = 2
 
-        testList.GenericList = New List(Of CSVItem) From {New CSVItem, New CSVItem}
+        testList.GenericList = New List(Of ICSVItem) From {New mock_CSVItem, New mock_CSVItem}
 
         testList.GenericList.Add(input)
 
@@ -72,7 +72,7 @@ Imports Microsoft.VisualBasic.FileIO
 
         testList.Add(addDate, addName, addAmt)
 
-        Dim output As CSVItem = testList.Item(0)
+        Dim output As ICSVItem = testList.Item(0)
 
         Assert.AreEqual(addDate, output.TransDate, "Dates are not equal")
         Assert.AreEqual(addName, output.Payee, "Payee Names are not equal")
@@ -81,7 +81,7 @@ Imports Microsoft.VisualBasic.FileIO
 
     <TestMethod>
     Public Sub CSVList_AddMethodAcceptsACSVItemObject()
-        Dim input As New CSVItem
+        Dim input As New mock_CSVItem
         input.TransDate = "12/12/2017"
         input.Payee = "Payee Name"
         input.Amount = "20.00"
@@ -90,7 +90,7 @@ Imports Microsoft.VisualBasic.FileIO
 
         testList.Add(input)
 
-        Dim output As CSVItem = testList.Item(0)
+        Dim output As ICSVItem = testList.Item(0)
 
         Assert.AreEqual(input.Amount, output.Amount, "Amounts are not equal")
         Assert.AreEqual(input.Payee, output.Payee, "Payee Names are not equal")

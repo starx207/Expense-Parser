@@ -12,7 +12,7 @@
             Return _inUse
         End Get
         Set(value As Boolean)
-            If Budget = 0 Then
+            If Budget <= 0 Then
                 _inUse = value
             End If
         End Set

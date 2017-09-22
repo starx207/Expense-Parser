@@ -75,10 +75,11 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SharedConstantsAndTypes.vb" />
-    <Compile Include="CSVItem.vb" />
-    <Compile Include="CSVList.vb" />
-    <Compile Include="ExcelExporter.vb" />
+    <Compile Include="Interfaces\ICSVItem.vb" />
+    <Compile Include="Modules\SharedConstantsAndTypes.vb" />
+    <Compile Include="Classes\CSVItem.vb" />
+    <Compile Include="Classes\CSVList.vb" />
+    <Compile Include="Classes\ExcelExporter.vb" />
     <Compile Include="ExportDestination.Designer.vb">
       <DependentUpon>ExportDestination.vb</DependentUpon>
     </Compile>
@@ -92,8 +93,8 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HelperFunctions.vb" />
-    <Compile Include="Budget.vb" />
+    <Compile Include="Modules\HelperFunctions.vb" />
+    <Compile Include="Classes\Budget.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -109,8 +110,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="BudgetCategory.vb" />
-    <Compile Include="SettingsManager.vb" />
+    <Compile Include="Classes\BudgetCategory.vb" />
+    <Compile Include="Classes\SettingsManager.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ExportDestination.resx">

@@ -1,8 +1,9 @@
 ﻿Public Class CSVItem
-    Public Property TransDate As String
-    Public Property Payee As String
+    Implements ICSVItem
+    Public Property TransDate As String Implements ICSVItem.TransDate
+    Public Property Payee As String Implements ICSVItem.Payee
     Private TransactionAmount As String
-    Public Property Amount() As String
+    Public Property Amount() As String Implements ICSVItem.Amount
         Get
             Return TransactionAmount
         End Get
