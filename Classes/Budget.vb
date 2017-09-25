@@ -8,7 +8,7 @@
     End Sub
 
     Public Function PayeeCategory(ByVal payeeName As String) As String
-        For Each category As BudgetCategory In Categories
+        For Each category As IBudgetCategory In Categories
             If category.Payees.Contains(payeeName) Then
                 Return category.Name
             End If
@@ -20,7 +20,7 @@
     End Function
 
     Public Function GetAssignedCategory(ByVal payeeName As String) As String
-        For Each category As BudgetCategory In Categories
+        For Each category As IBudgetCategory In Categories
             If category.Payees.Contains(payeeName) Then
                 Return category.Name
             End If
@@ -31,7 +31,7 @@
 
     Public Function AllCategoryNames() As List(Of String)
         Dim categoryNames As New List(Of String)
-        For Each category As BudgetCategory In Categories
+        For Each category As IBudgetCategory In Categories
             categoryNames.Add(category.Name)
         Next
         categoryNames.Sort()
