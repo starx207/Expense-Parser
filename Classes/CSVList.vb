@@ -1,29 +1,31 @@
 ﻿Imports Microsoft.VisualBasic.FileIO
 
 Public Class CSVList
+    Implements ICSVList
     Private ReadOnly AllowableDateColumns As String() = {"DATE", "TRANSACTION DATE"}
     Private ReadOnly AllowablePayeeColumns As String() = {"PAYEE NAME", "MERCHANT"}
     Private ReadOnly AllowableAmountColumns As String() = {"AMOUNT", "BILLING AMOUNT"}
 
     Private UniqueCSVs As New List(Of String)
-    Public Property GenericList As List(Of ICSVItem)
-    Public ReadOnly Property Length() As Integer
+    Public Property GenericList As List(Of ICSVItem) Implements ICSVList.GenericList
+
+    Public ReadOnly Property Length() As Integer Implements ICSVList.Length
         Get
             Return GenericList.Count
         End Get
     End Property
-    Public ReadOnly Property Item(ByVal i As Integer) As ICSVItem
+    Public ReadOnly Property Item(ByVal i As Integer) As ICSVItem Implements ICSVList.Item
         Get
             Return GenericList.Item(i)
         End Get
     End Property
-    Public ReadOnly Property UniqueItems() As List(Of String)
+    Public ReadOnly Property UniqueItems() As List(Of String) Implements ICSVList.UniqueItems
         Get
             Return UniqueCSVs
         End Get
     End Property
 
-    Public Function IndexOf(ByVal payee As String) As Integer
+    Public Function IndexOf(ByVal payee As String) As Integer Implements ICSVList.IndexOf
         Dim i As Integer = 0
         For Each csv As ICSVItem In GenericList
             If csv.Payee = payee Then
@@ -34,7 +36,7 @@ Public Class CSVList
         Return -1
     End Function
 
-    Public Sub RemoveAt(ByVal i As Integer)
+    Public Sub RemoveAt(ByVal i As Integer) Implements ICSVList.RemoveAt
         Dim payeeRemoved As String = GenericList(i).Payee
         GenericList.RemoveAt(i)
 
@@ -48,7 +50,7 @@ Public Class CSVList
         UniqueCSVs.Remove(payeeRemoved)
     End Sub
 
-    Public Sub Add(ByVal csvDate As String, ByVal csvName As String, ByVal csvAmt As String)
+    Public Sub Add(ByVal csvDate As String, ByVal csvName As String, ByVal csvAmt As String) Implements ICSVList.Add
         Dim newCSV As New CSVItem
         newCSV.TransDate = csvDate
         newCSV.Payee = csvName
@@ -62,7 +64,7 @@ Public Class CSVList
         End If
     End Sub
 
-    Public Sub Add(ByVal item As ICSVItem)
+    Public Sub Add(ByVal item As ICSVItem) Implements ICSVList.Add
         Add(item.TransDate, item.Payee, item.Amount)
     End Sub
 

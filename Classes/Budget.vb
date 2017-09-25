@@ -61,7 +61,7 @@
         Return False
     End Function
 
-    Public Sub AssignCategoryUsedStatus(ByRef payees As CSVList)
+    Public Sub AssignCategoryUsedStatus(ByRef payees As ICSVList)
         Dim stillUsed As Boolean
         For Each category As IBudgetCategory In Categories
             stillUsed = False

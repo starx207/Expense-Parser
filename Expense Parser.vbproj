@@ -75,6 +75,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\ICSVList.vb" />
     <Compile Include="Interfaces\IBudgetCategory.vb" />
     <Compile Include="Interfaces\ICSVItem.vb" />
     <Compile Include="Modules\SharedConstantsAndTypes.vb" />
