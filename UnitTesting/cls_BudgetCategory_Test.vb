@@ -25,7 +25,7 @@ Imports Expense_Parser
 
         category.Name = input
 
-        Assert.AreEqual(expectedOutput, category.Name) ', $"""Name"" Property did not save value ""{input}"" correctly")
+        Assert.AreEqual(expectedOutput, category.Name, $"""Name"" Property did not save value ""{input}"" correctly")
     End Sub
 
     <TestMethod>
@@ -36,7 +36,7 @@ Imports Expense_Parser
 
         category.Type = input
 
-        Assert.AreEqual(expectedOutput, category.Type) ', $"""Type"" Property did not save value ""{input}"" correctly")
+        Assert.AreEqual(expectedOutput, category.Type, $"""Type"" Property did not save value ""{input}"" correctly")
     End Sub
 
     <TestMethod>
@@ -47,7 +47,7 @@ Imports Expense_Parser
 
         category.Budget = input
 
-        Assert.AreEqual(expectedOutput, category.Budget) ', $"""Name"" Property did not save value ""{input}"" correctly")
+        Assert.AreEqual(expectedOutput, category.Budget, $"""Name"" Property did not save value ""{input}"" correctly")
     End Sub
 
     <TestMethod>
@@ -77,7 +77,7 @@ Imports Expense_Parser
 
         category.Used = input
 
-        Assert.AreEqual(expectedOutput, category.Used) ', $"""Used"" returns wrong value for a budget of {budgetValue} and an input value of {input}")
+        Assert.AreEqual(expectedOutput, category.Used, $"""Used"" returns wrong value for a budget of {budgetValue} and an input value of {input}")
     End Sub
 
 End Class
