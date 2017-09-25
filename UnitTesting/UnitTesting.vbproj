@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cls_CSVList_Test.vb" />
+    <Compile Include="MockClasses\mock_BudgetCategory.vb" />
     <Compile Include="MockClasses\mock_CSVItem.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
