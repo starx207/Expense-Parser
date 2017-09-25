@@ -25,7 +25,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
 
         testItem.TransDate = input
 
-        Assert.AreEqual(expectedOutput, testItem.TransDate, $"""TransDate"" Property did not save value ""{input}"" correctly")
+        Assert.AreEqual(expectedOutput, testItem.TransDate) ', $"""TransDate"" Property did not save value ""{input}"" correctly")
     End Sub
 
     <TestMethod>
@@ -36,7 +36,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
 
         testItem.Payee = input
 
-        Assert.AreEqual(expectedOutput, testItem.Payee, $"""Payee"" Property did not save the value ""{input}"" correctly")
+        Assert.AreEqual(expectedOutput, testItem.Payee) ', $"""Payee"" Property did not save the value ""{input}"" correctly")
     End Sub
 
     <DataTestMethod, DataRow("20.00", "20.00"), DataRow("$30.00", "30.00")>
@@ -45,6 +45,6 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
 
         testItem.Amount = input
 
-        Assert.AreEqual(expectedOutput, testItem.Amount, $"""Amount"" Property did not save the value ""{input}"" correctly")
+        Assert.AreEqual(expectedOutput, testItem.Amount) ', $"""Amount"" Property did not save the value ""{input}"" correctly")
     End Sub
 End Class
