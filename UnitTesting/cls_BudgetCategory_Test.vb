@@ -80,4 +80,17 @@ Imports Expense_Parser
         Assert.AreEqual(expectedOutput, category.Used, $"""Used"" returns wrong value for a budget of {budgetValue} and an input value of {input}")
     End Sub
 
+    <TestMethod>
+    Public Sub BudgetCategory_OverloadedConstructorAccepts_Name_Type_Amount()
+        Dim name As String = "Name1"
+        Dim type As BudgetTypes = BudgetTypes.Income
+        Dim amount As Double = 250.25
+
+        Dim category As New BudgetCategory(name, type, amount)
+
+        Assert.AreEqual(name, category.Name)
+        Assert.AreEqual(type, category.Type)
+        Assert.AreEqual(amount, category.Budget)
+    End Sub
+
 End Class
