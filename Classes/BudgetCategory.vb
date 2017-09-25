@@ -1,10 +1,11 @@
 ﻿Public Class BudgetCategory
-    Public Property Name As String
-    Public Property Type As BudgetTypes
-    Public Property Budget As Double
-    Public Property Payees As List(Of String)
+    Implements IBudgetCategory
+    Public Property Name As String Implements IBudgetCategory.Name
+    Public Property Type As BudgetTypes Implements IBudgetCategory.Type
+    Public Property Budget As Double Implements IBudgetCategory.Budget
+    Public Property Payees As List(Of String) Implements IBudgetCategory.Payees
     Private _inUse As Boolean
-    Public Property Used() As Boolean
+    Public Property Used() As Boolean Implements IBudgetCategory.Used
         Get
             If Budget > 0 Then
                 Return True

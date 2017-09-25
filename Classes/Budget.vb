@@ -1,9 +1,9 @@
 ﻿Public Class Budget
-    Public Property Categories As List(Of BudgetCategory)
+    Public Property Categories As List(Of IBudgetCategory)
     Public Property TotalBudget As Double
 
     Sub New()
-        Categories = New List(Of BudgetCategory)
+        Categories = New List(Of IBudgetCategory)
         TotalBudget = 0.00
     End Sub
 
@@ -38,8 +38,8 @@
         Return categoryNames
     End Function
 
-    Public Function GetCategoryByName(ByVal categoryName As String) As BudgetCategory
-        For Each category As BudgetCategory In Categories
+    Public Function GetCategoryByName(ByVal categoryName As String) As IBudgetCategory
+        For Each category As IBudgetCategory In Categories
             If category.Name = categoryName Then
                 Return category
             End If
@@ -63,7 +63,7 @@
 
     Public Sub AssignCategoryUsedStatus(ByRef payees As CSVList)
         Dim stillUsed As Boolean
-        For Each category As BudgetCategory In Categories
+        For Each category As IBudgetCategory In Categories
             stillUsed = False
             For Each payee As String In category.Payees
                 If payees.IndexOf(payee) <> -1 Then
