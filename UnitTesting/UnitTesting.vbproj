@@ -80,6 +80,7 @@
     <Compile Include="cls_CSVList_Test.vb" />
     <Compile Include="MockClasses\mock_BudgetCategory.vb" />
     <Compile Include="MockClasses\mock_CSVItem.vb" />
+    <Compile Include="MockClasses\mock_CSVList.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -97,6 +98,7 @@
     </Compile>
     <Compile Include="cls_CSVItem_Test.vb" />
     <Compile Include="cls_BudgetCategory_Test.vb" />
+    <Compile Include="cls_Budget_Test.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
