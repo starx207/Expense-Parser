@@ -75,7 +75,7 @@ Public Class Form1
             newCmbBox.DropDownStyle = ComboBoxStyle.DropDown
             newCmbBox.Items.AddRange(budget.AllCategoryNames().ToArray())
             newCmbBox.Name = "cmb" & payeeName
-            newCmbBox.SelectedText = budget.PayeeCategory(payeeName)
+            newCmbBox.SelectedText = budget.FetchOrAddPayeeCategory(payeeName)
             AddHandler newCmbBox.Leave, AddressOf type_changed
 
             ' Add new conrols to panel
