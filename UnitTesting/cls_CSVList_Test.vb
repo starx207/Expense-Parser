@@ -28,7 +28,7 @@ Imports Microsoft.VisualBasic.FileIO
     End Sub
 
     <TestMethod>
-    Public Sub CSVList_HasAGenericListProperty()
+    Public Sub CSVList_GenericListProperty_ReadWrite()
         Dim testList As New CSVList
 
         Dim input As New List(Of ICSVItem) From {New mock_CSVItem, New mock_CSVItem}
@@ -39,7 +39,7 @@ Imports Microsoft.VisualBasic.FileIO
     End Sub
 
     <TestMethod>
-    Public Sub CSVList_LengthPropertyReturnsGenericListLength()
+    Public Sub CSVList_LengthProperty_ReturnsGenericListLength()
         Dim testList As New CSVList
 
         testList.GenericList = New List(Of ICSVItem) From {New mock_CSVItem, New mock_CSVItem, New mock_CSVItem, New mock_CSVItem}
@@ -50,7 +50,7 @@ Imports Microsoft.VisualBasic.FileIO
     End Sub
 
     <TestMethod>
-    Public Sub CSVList_ItemPropertyReturnsCorrespondingItemInGenericList()
+    Public Sub CSVList_ItemProperty_ReturnsCorrespondingItemInGenericList()
         Dim testList As New CSVList
         Dim input As New mock_CSVItem
         Dim index As Integer = 2
@@ -63,7 +63,7 @@ Imports Microsoft.VisualBasic.FileIO
     End Sub
 
     <TestMethod>
-    Public Sub CSVList_AddMethodAcceptsExplicitValuesForNewCSVItem()
+    Public Sub CSVList_AddMethod_AcceptsExplicitValuesForNewCSVItem()
         Dim addDate As String = "12/12/2017"
         Dim addName As String = "Payee Name"
         Dim addAmt As String = "$20.00"
@@ -80,7 +80,7 @@ Imports Microsoft.VisualBasic.FileIO
     End Sub
 
     <TestMethod>
-    Public Sub CSVList_AddMethodAcceptsACSVItemObject()
+    Public Sub CSVList_AddMethod_AcceptsACSVItemObject()
         Dim input As New mock_CSVItem
         input.TransDate = "12/12/2017"
         input.Payee = "Payee Name"
@@ -98,7 +98,7 @@ Imports Microsoft.VisualBasic.FileIO
     End Sub
 
     <DataTestMethod, DataRow("Fred"), DataRow("Payee1"), DataRow("Payee3")>
-    Public Sub CSVList_IndexOfMethodReturnsCorrectIndexOfCSVItemWithSpecifiedPayeeName(ByVal searchFor As String)
+    Public Sub CSVList_IndexOfMethod_ReturnsCorrectIndexOfCSVItemWithSpecifiedPayeeName(ByVal searchFor As String)
         Dim testList As New CSVList
         testList.Add("12/12/2017", "Payee1", "20.00")
         testList.Add("12/12/2017", "Payee2", "30.00")
@@ -123,7 +123,7 @@ Imports Microsoft.VisualBasic.FileIO
     End Sub
 
     <DataTestMethod, DataRow(-1), DataRow(0), DataRow(1), DataRow(2)>
-    Public Sub CSVList_RemoveAtMethodRemovesCorrectCSVItemAtIndex(ByVal removeAtIndex As Integer)
+    Public Sub CSVList_RemoveAtMethod_RemovesCorrectCSVItemAtIndex(ByVal removeAtIndex As Integer)
         Dim testList As New CSVList()
         testList.Add("12/12/2017", "Payee1", "20.00")
         testList.Add("12/12/2017", "Payee2", "30.00")
@@ -157,7 +157,7 @@ Imports Microsoft.VisualBasic.FileIO
     End Sub
 
     <TestMethod>
-    Public Sub CSVList_UniqueItemsPropertyReturnsStringListWithoutDuplicatePayeeNames()
+    Public Sub CSVList_UniqueItemsProperty_ReturnsStringListWithoutDuplicatePayeeNames()
         Dim testList As New CSVList
         testList.Add("12/12/2017", "Payee1", "20.00")
         testList.Add("12/12/2017", "Payee2", "30.00")
@@ -199,7 +199,7 @@ Imports Microsoft.VisualBasic.FileIO
     End Sub
 
     <TestMethod>
-    Public Sub CSVList_OverloadedConstructorAcceptsTextFieldParserToLoad()
+    Public Sub CSVList_OverloadedConstructor_AcceptsTextFieldParserToLoad()
         Dim fileContent As String = "Date,Payee Name,Amount" + vbCrLf +
             "12/12/2017,Payee1,20.00" + vbCrLf +
             "12/12/2017,Payee2,$30.00" + vbCrLf +
@@ -226,7 +226,7 @@ Imports Microsoft.VisualBasic.FileIO
     End Sub
 
     <TestMethod>
-    Public Sub CSVList_OverloadedConstructorAcceptsTextFieldParserToLoad_AlternateHeaderNamesAndOrder()
+    Public Sub CSVList_OverloadedConstructor_AcceptsTextFieldParserToLoad_AlternateHeaderNamesAndOrder()
         Dim fileContent As String = "merchant,TRANSACTION date,   billing amount" + vbCrLf +
             "Payee1,12/12/2017,20.00" + vbCrLf +
             "Payee2,12/12/2017,$30.00" + vbCrLf +

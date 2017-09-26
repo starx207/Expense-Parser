@@ -18,7 +18,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
     End Sub
 
     <TestMethod>
-    Public Sub CSVItem_TransDatePropertyReadWrite()
+    Public Sub CSVItem_TransDateProperty_ReadWrite()
         Dim testItem As New CSVItem
         Dim input As String = "12/12/2017"
         Dim expectedOutput As String = input
@@ -29,7 +29,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
     End Sub
 
     <TestMethod>
-    Public Sub CSVItem_PayeePropertyReadWrite()
+    Public Sub CSVItem_PayeeProperty_ReadWrite()
         Dim testItem As New CSVItem
         Dim input As String = "Payee1"
         Dim expectedOutput As String = input
@@ -40,7 +40,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
     End Sub
 
     <DataTestMethod, DataRow("20.00", "20.00"), DataRow("$30.00", "30.00")>
-    Public Sub CSVItem_AmountPropertyReadWrite(ByVal input As String, ByVal expectedOutput As String)
+    Public Sub CSVItem_AmountProperty_ReadWrite(ByVal input As String, ByVal expectedOutput As String)
         Dim testItem As New CSVItem
 
         testItem.Amount = input

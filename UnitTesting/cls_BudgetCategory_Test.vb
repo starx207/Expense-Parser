@@ -18,7 +18,7 @@ Imports Expense_Parser
     End Sub
 
     <TestMethod>
-    Public Sub BudgetCategory_NamePropertyReadWrite()
+    Public Sub BudgetCategory_NameProperty_ReadWrite()
         Dim category As New BudgetCategory
         Dim input As String = "CategoryName"
         Dim expectedOutput As String = input
@@ -29,7 +29,7 @@ Imports Expense_Parser
     End Sub
 
     <TestMethod>
-    Public Sub BudgetCategory_TypePropertyReadWrite()
+    Public Sub BudgetCategory_TypeProperty_ReadWrite()
         Dim category As New BudgetCategory
         Dim input As BudgetTypes = BudgetTypes.Expense
         Dim expectedOutput As BudgetTypes = input
@@ -40,7 +40,7 @@ Imports Expense_Parser
     End Sub
 
     <TestMethod>
-    Public Sub BudgetCategory_BudgetPropertyReadWrite()
+    Public Sub BudgetCategory_BudgetProperty_ReadWrite()
         Dim category As New BudgetCategory
         Dim input As Double = 100.5
         Dim expectedOutput As Double = input
@@ -51,7 +51,7 @@ Imports Expense_Parser
     End Sub
 
     <TestMethod>
-    Public Sub BudgetCategory_PayeesPropertyReadWrite()
+    Public Sub BudgetCategory_PayeesProperty_ReadWrite()
         Dim category As New BudgetCategory
         Dim input As New List(Of String) From {"Payee1", "Payee2", "Payee3", "Payee4"}
         Dim expectedOutput As List(Of String) = input
@@ -68,7 +68,7 @@ Imports Expense_Parser
         DataRow(0, False),
         DataRow(100, False),
         DataRow(-100, False)>
-    Public Sub BudgetCategory_UsedPropertyReadWrite(ByVal budgetValue As Double, ByVal input As Boolean)
+    Public Sub BudgetCategory_UsedProperty_ReadWrite(ByVal budgetValue As Double, ByVal input As Boolean)
         Dim category As New BudgetCategory
         category.Budget = budgetValue
 
@@ -81,7 +81,7 @@ Imports Expense_Parser
     End Sub
 
     <TestMethod>
-    Public Sub BudgetCategory_OverloadedConstructorAccepts_Name_Type_Amount()
+    Public Sub BudgetCategory_OverloadedConstructor_Accepts_Name_Type_Amount()
         Dim name As String = "Name1"
         Dim type As BudgetTypes = BudgetTypes.Income
         Dim amount As Double = 250.25
