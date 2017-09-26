@@ -220,7 +220,7 @@ Public Class Form1
         If cmbBox IsNot Nothing Then
 
             If cmbBox.Text = "" Then
-                cmbBox.Text = UnassignedPayeeType
+                cmbBox.Text = Budget.UnassignedPayeeType
             End If
 
             If budget.ReassignPayee(cmbBox.Name.Substring(3), cmbBox.Text) Then

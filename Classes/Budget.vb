@@ -1,4 +1,5 @@
 ﻿Public Class Budget
+    Public Const UnassignedPayeeType As String = "Misc"
     Public Property Categories As List(Of IBudgetCategory)
     Public Property TotalBudget As Double
 

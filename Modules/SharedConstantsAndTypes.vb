@@ -8,7 +8,6 @@ Public Module SharedConstantsAndTypes
         Income
     End Enum
 
-    Public Const UnassignedPayeeType As String = "Misc"
     Public Const NoExportFile As String = "None"
     Public Const UnassignedCategory As String = "Unassigned"
     Public Const CurrencyFormat As String = "$###,##0.00"
