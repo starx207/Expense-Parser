@@ -9,7 +9,6 @@ Public Module SharedConstantsAndTypes
     End Enum
 
     Public Const NoExportFile As String = "None"
-    Public Const UnassignedCategory As String = "Unassigned"
     Public Const CurrencyFormat As String = "$###,##0.00"
 
 End Module

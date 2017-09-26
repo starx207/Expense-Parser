@@ -269,7 +269,7 @@ Public Class ExcelExporter
             For i As Integer = 0 To transactions.Length - 1
                 Dim transaction As CSVItem = transactions.Item(i)
                 Dim category As String = BudgetedCategories.GetAssignedCategory(transaction.Payee)
-                If category = UnassignedCategory Then
+                If category = Budget.UnassignedPayeeType Then
                     category = UnbudgetedCategories.GetAssignedCategory(transaction.Payee)
                 End If
                 .Range(.Cells(firstValueRow + i, startingColumn), .Cells(firstValueRow + i, startingColumn + colOffset)).Interior.Color = mainColor
@@ -347,7 +347,7 @@ Public Class ExcelExporter
         Next
 
         For Each csv As CSVItem In transactionList.GenericList
-            If sourceBudget.GetCategoryByName(sourceBudget.PayeeCategory(csv.Payee)).Type = BudgetTypes.Income Then
+            If sourceBudget.GetCategoryByName(sourceBudget.FetchOrAddPayeeCategory(csv.Payee)).Type = BudgetTypes.Income Then
                 IncomeTransactions.Add(csv)
             Else
                 ExpenseTransactions.Add(csv)

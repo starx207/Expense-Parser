@@ -1,5 +1,6 @@
 ﻿Public Class Budget
     Public Const UnassignedPayeeType As String = "Misc"
+
     Public Property Categories As List(Of IBudgetCategory)
     Public Property TotalBudget As Double
 
@@ -8,16 +9,15 @@
         TotalBudget = 0.00
     End Sub
 
-    Public Function PayeeCategory(ByVal payeeName As String) As String
-        For Each category As IBudgetCategory In Categories
-            If category.Payees.Contains(payeeName) Then
-                Return category.Name
-            End If
-        Next
-        ' Add the payee to UnassignedPayeeType
-        GetCategoryByName(UnassignedPayeeType).Payees.Add(payeeName)
+    Public Function FetchOrAddPayeeCategory(ByVal payeeName As String) As String
+        Dim assignedCategory As String = GetAssignedCategory(payeeName)
 
-        Return UnassignedPayeeType
+        If assignedCategory = UnassignedPayeeType Then
+            ' Add the payee to UnassignedPayeeType
+            GetCategoryByName(UnassignedPayeeType).Payees.Add(payeeName)
+        End If
+
+        Return assignedCategory
     End Function
 
     Public Function GetAssignedCategory(ByVal payeeName As String) As String
@@ -27,7 +27,7 @@
             End If
         Next
 
-        Return UnassignedCategory
+        Return UnassignedPayeeType
     End Function
 
     Public Function AllCategoryNames() As List(Of String)
@@ -51,7 +51,7 @@
     End Function
 
     Public Function ReassignPayee(ByVal payeeName As String, ByVal newCategory As String) As Boolean
-        Dim currentCategory As String = PayeeCategory(payeeName)
+        Dim currentCategory As String = FetchOrAddPayeeCategory(payeeName)
         If currentCategory <> newCategory Then
             Dim preCount As Integer = Categories.Count
             GetCategoryByName(currentCategory).Payees.Remove(payeeName)
