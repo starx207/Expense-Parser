@@ -14,7 +14,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
         End Try
 
         ' Test passes if it gets here
-        Assert.IsTrue(True)
+        Assert.IsTrue(False)
     End Sub
 
     <TestMethod>
