@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="UnitTesting.cls_CSVItem_Test.CSVItem_ClassExists" /><Add Test="UnitTesting.cls_CSVItem_Test.CSVItem_AmountProperty_ReadWrite" /><Add Test="UnitTesting.cls_CSVItem_Test.CSVItem_PayeeProperty_ReadWrite" /><Add Test="UnitTesting.cls_CSVItem_Test.CSVItem_TransDateProperty_ReadWrite" /></Playlist>
