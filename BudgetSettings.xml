@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MonthlyBudget>
-  <TotalBudget>3069</TotalBudget>
+  <TotalBudget>3605</TotalBudget>
   <Category>
     <Name>Account Transfers</Name>
     <Type>2</Type>
@@ -22,6 +22,7 @@
       <Name>HUNTINGTON ATM CASH WITHDRAWAL</Name>
       <Name>NON-HUNTINGTON ATM CASH WITHDRAWAL FEE</Name>
       <Name>NON-HUNTINGTON CASH WITHDRAWAL</Name>
+      <Name>Cash Withdrawal</Name>
     </Payees>
   </Category>
   <Category>
@@ -41,6 +42,7 @@
       <Name>Birthday Money</Name>
       <Name>Earned Interest</Name>
       <Name>Reiske Drum Lesson</Name>
+      <Name>Cash Deposit</Name>
     </Payees>
   </Category>
   <Category>
@@ -100,6 +102,7 @@
       <Name>Wal-Mart Super Center4</Name>
       <Name>WM SUPERCENTER</Name>
       <Name>WM SUPERCENTER #1718</Name>
+      <Name>MEIJER IN 2200 TIF</Name>
     </Payees>
   </Category>
   <Category>
@@ -111,6 +114,7 @@
       <Name>ESURANCE         INSURANCE</Name>
       <Name>Medical Mutual</Name>
       <Name>MediShare</Name>
+      <Name>PROGRESSIVE *INSURANCE</Name>
     </Payees>
   </Category>
   <Category>
@@ -129,6 +133,7 @@
     <Budget>0</Budget>
     <Payees>
       <Name>EYES ON MAIN VI</Name>
+      <Name>EYES ON MAIN VISION CE</Name>
     </Payees>
   </Category>
   <Category>
@@ -182,6 +187,9 @@
       <Name>THE GREEK GARDEN</Name>
       <Name>TIM HORTONS #91</Name>
       <Name>WENDY'S #294</Name>
+      <Name>MR LEE EXPRESS</Name>
+      <Name>PANERA BREAD #872</Name>
+      <Name>TROPICAL SMOOTHIE CAFE</Name>
     </Payees>
   </Category>
   <Category>
@@ -216,6 +224,34 @@
     <Payees>
       <Name />
       <Name>USPS PO 3808610</Name>
+      <Name>Cash Withdrawal</Name>
+      <Name>Cash Deposit</Name>
+      <Name>Cash Deposit</Name>
+      <Name>EYES ON MAIN VISION CE</Name>
+      <Name>MEIJER IN 2200 TIF</Name>
+      <Name>MR LEE EXPRESS</Name>
+      <Name>PANERA BREAD #872</Name>
+      <Name>PROGRESSIVE *INSURANCE</Name>
+      <Name>SALLY BEAUTY #</Name>
+      <Name>STAPLES 0381</Name>
+      <Name>T J MAXX  1111 S M</Name>
+      <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>TROPICAL SMOOTHIE CAFE</Name>
+      <Name>EYES ON MAIN VISION CE</Name>
+      <Name>MEIJER IN 2200 TIF</Name>
+      <Name>MR LEE EXPRESS</Name>
+      <Name>PANERA BREAD #872</Name>
+      <Name>PROGRESSIVE *INSURANCE</Name>
+      <Name>SALLY BEAUTY #</Name>
+      <Name>STAPLES 0381</Name>
+      <Name>T J MAXX  1111 S M</Name>
+      <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>TROPICAL SMOOTHIE CAFE</Name>
+      <Name>STAPLES 0381</Name>
+      <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>SALLY BEAUTY #</Name>
+      <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>T J MAXX  1111 S M</Name>
     </Payees>
   </Category>
   <Category>
@@ -285,6 +321,10 @@
       <Name>VICTORIA'S SECRET 0647</Name>
       <Name>WALMART.COM</Name>
       <Name>X3WATCH626-676-2004</Name>
+      <Name>SALLY BEAUTY #</Name>
+      <Name>STAPLES 0381</Name>
+      <Name>T J MAXX  1111 S M</Name>
+      <Name>TJ MAXX # 1800 TIF</Name>
     </Payees>
   </Category>
   <Category>
@@ -331,6 +371,7 @@
     <Budget>0</Budget>
     <Payees>
       <Name>Reiske Lessons</Name>
+      <Name>Cash Deposit</Name>
     </Payees>
   </Category>
 </MonthlyBudget>
