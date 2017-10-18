@@ -1,7 +1,9 @@
 ﻿Imports System.Text
 Imports Microsoft.VisualStudio.TestTools.UnitTesting
 Imports Expense_Parser
+Imports System.Diagnostics.CodeAnalysis
 
+<ExcludeFromCodeCoverage>
 <TestClass()> Public Class cls_BudgetCategory_Test
 
     <TestMethod()>

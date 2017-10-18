@@ -3,7 +3,9 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
 Imports Expense_Parser
 Imports System.IO
 Imports Microsoft.VisualBasic.FileIO
+Imports System.Diagnostics.CodeAnalysis
 
+<ExcludeFromCodeCoverage>
 <TestClass()> Public Class cls_CSVList_Test
 
     Private Const TestResourcesFolder As String = "..\..\TestResources\"

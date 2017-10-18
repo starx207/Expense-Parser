@@ -1,5 +1,7 @@
 ﻿Imports Expense_Parser
+Imports System.Diagnostics.CodeAnalysis
 
+<ExcludeFromCodeCoverage>
 Public Class mock_BudgetCategory
     Implements IBudgetCategory
 
