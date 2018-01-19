@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MonthlyBudget>
-  <TotalBudget>3605</TotalBudget>
+  <TotalBudget>4146</TotalBudget>
   <Category>
     <Name>Account Transfers</Name>
     <Type>2</Type>
@@ -18,17 +18,17 @@
     <Type>1</Type>
     <Budget>0</Budget>
     <Payees>
+      <Name>Cash Withdrawal</Name>
       <Name>Cash Withdrawl</Name>
       <Name>HUNTINGTON ATM CASH WITHDRAWAL</Name>
       <Name>NON-HUNTINGTON ATM CASH WITHDRAWAL FEE</Name>
       <Name>NON-HUNTINGTON CASH WITHDRAWAL</Name>
-      <Name>Cash Withdrawal</Name>
     </Payees>
   </Category>
   <Category>
     <Name>Electric Bill</Name>
     <Type>1</Type>
-    <Budget>110</Budget>
+    <Budget>100</Budget>
     <Payees>
       <Name>Village of Bloomdale</Name>
       <Name>Village Of Bloomdale</Name>
@@ -40,9 +40,12 @@
     <Budget>0</Budget>
     <Payees>
       <Name>Birthday Money</Name>
-      <Name>Earned Interest</Name>
-      <Name>Reiske Drum Lesson</Name>
       <Name>Cash Deposit</Name>
+      <Name>Earned Interest</Name>
+      <Name>Interest Payment</Name>
+      <Name>Reiske Drum Lesson</Name>
+      <Name>RTI Survey Incentive Program</Name>
+      <Name>Tiffany Wenning</Name>
     </Payees>
   </Category>
   <Category>
@@ -57,12 +60,17 @@
       <Name>CIRCLE K 05636 1245 NO</Name>
       <Name>CIRCLE K 05644</Name>
       <Name>CIRCLE K 05672</Name>
+      <Name>CIRCLE K 5657</Name>
       <Name>HY-MILER #2230</Name>
       <Name>KROGER FUEL #63</Name>
       <Name>MARATHON PETRO</Name>
+      <Name>MARATHON PETRO144543</Name>
+      <Name>MARATHON PETRO72504</Name>
+      <Name>MARATHON PETRO95042</Name>
       <Name>MURPHY6666ATWAL</Name>
       <Name>PETRO N BALTIMORE12906</Name>
       <Name>PILOT         00003608</Name>
+      <Name>SHELL OIL 534267800QPS</Name>
       <Name>SPEEDWAY 05253</Name>
       <Name>SPEEDWAY 05253 165</Name>
       <Name>SPEEDWAY 05263 200</Name>
@@ -71,7 +79,7 @@
   <Category>
     <Name>Gas Bill</Name>
     <Type>1</Type>
-    <Budget>66</Budget>
+    <Budget>65</Budget>
     <Payees>
       <Name>COLUMBIA GAS     PAYMENT</Name>
       <Name>Columbia Gas of Ohio</Name>
@@ -80,10 +88,11 @@
   <Category>
     <Name>Groceries</Name>
     <Type>1</Type>
-    <Budget>700</Budget>
+    <Budget>750</Budget>
     <Payees>
       <Name>Debby Keiser (Groceries)</Name>
       <Name>DOLLAR GENERALDESHLER</Name>
+      <Name>GREAT SCOT # 9</Name>
       <Name>GREAT SCOT # 90</Name>
       <Name>GREAT SCOT # 913710 DE</Name>
       <Name>GROUNDS FOR THO</Name>
@@ -92,23 +101,26 @@
       <Name>KROGER    1996 TIF</Name>
       <Name>MEIJER # 051</Name>
       <Name>MEIJER # 156</Name>
+      <Name>MEIJER IN 2200 TIF</Name>
       <Name>MEIJER IN 2200 TIFFIN</Name>
       <Name>MEIJER INC #051    Q01</Name>
       <Name>MEIJER INC #156</Name>
+      <Name>MEIJER INC #156    Q01</Name>
       <Name>MEIJER INC 051</Name>
       <Name>MEIJER INC 156</Name>
+      <Name>WAL-MART #1718</Name>
       <Name>Wal-Mart Super</Name>
       <Name>Wal-Mart Super Center1</Name>
       <Name>Wal-Mart Super Center4</Name>
       <Name>WM SUPERCENTER</Name>
       <Name>WM SUPERCENTER #1718</Name>
-      <Name>MEIJER IN 2200 TIF</Name>
+      <Name>WM SUPERCENTER #3840</Name>
     </Payees>
   </Category>
   <Category>
     <Name>Insurance</Name>
     <Type>1</Type>
-    <Budget>290</Budget>
+    <Budget>650</Budget>
     <Payees>
       <Name>AMERICA'S CHR    PAYMENT</Name>
       <Name>ESURANCE         INSURANCE</Name>
@@ -134,6 +146,7 @@
     <Payees>
       <Name>EYES ON MAIN VI</Name>
       <Name>EYES ON MAIN VISION CE</Name>
+      <Name>Keiser Family Dentistry</Name>
     </Payees>
   </Category>
   <Category>
@@ -142,12 +155,14 @@
     <Budget>0</Budget>
     <Payees>
       <Name>Appraisal Re6366 APP RESEAR</Name>
+      <Name>McComb</Name>
+      <Name>McComb Local Schools</Name>
     </Payees>
   </Category>
   <Category>
     <Name>Phone</Name>
     <Type>1</Type>
-    <Budget>100</Budget>
+    <Budget>85</Budget>
     <Payees>
       <Name>STRAIGHTTALK*AIRTIME</Name>
       <Name>VERIZON WIREL    PAYMENT</Name>
@@ -169,6 +184,7 @@
       <Name>GROUNDS FOR THOUGHT</Name>
       <Name>JIMMY JOHNS - 2</Name>
       <Name>JIMMY JOHNS - 210</Name>
+      <Name>JIMMY JOHNS - 2540</Name>
       <Name>LOGANS IRISH PU</Name>
       <Name>LOLAS BOWLING G</Name>
       <Name>LOLAS BOWLING GREEN</Name>
@@ -177,25 +193,28 @@
       <Name>MCDONALD'S F10932</Name>
       <Name>MCDONALD'S F119</Name>
       <Name>MCDONALD'S F154</Name>
+      <Name>MR LEE EXPRESS</Name>
       <Name>NAGOYA STEAKHOUSE</Name>
       <Name>PANERA BREAD #</Name>
       <Name>PANERA BREAD # 877</Name>
+      <Name>PANERA BREAD #872</Name>
+      <Name>PIZZA HUT #027255</Name>
       <Name>PIZZA HUT 03032</Name>
+      <Name>ROSSILLI'S RESTAURANT</Name>
       <Name>SUBWAY        0</Name>
       <Name>SUBWAY        03118940</Name>
+      <Name>SWEET FROG 300196</Name>
       <Name>TGI FRIDAY'S 2704</Name>
       <Name>THE GREEK GARDEN</Name>
       <Name>TIM HORTONS #91</Name>
-      <Name>WENDY'S #294</Name>
-      <Name>MR LEE EXPRESS</Name>
-      <Name>PANERA BREAD #872</Name>
       <Name>TROPICAL SMOOTHIE CAFE</Name>
+      <Name>WENDY'S #294</Name>
     </Payees>
   </Category>
   <Category>
     <Name>Student Loans</Name>
     <Type>1</Type>
-    <Budget>243.94</Budget>
+    <Budget>500</Budget>
     <Payees>
       <Name>FEDLOANSERVICING STDNT LOAN</Name>
     </Payees>
@@ -203,7 +222,7 @@
   <Category>
     <Name>Tithe</Name>
     <Type>1</Type>
-    <Budget>408</Budget>
+    <Budget>563</Budget>
     <Payees>
       <Name>Brookside Evange WEB PMTS</Name>
     </Payees>
@@ -223,35 +242,162 @@
     <Budget>0</Budget>
     <Payees>
       <Name />
-      <Name>USPS PO 3808610</Name>
+      <Name>AMAZON MKTPLACE PMTS</Name>
+      <Name>AMAZON.COM AMZN.COM/BI</Name>
+      <Name>AMAZON.COM AMZN.COM/BI</Name>
+      <Name>BED BATH &amp; BEYOND #651</Name>
+      <Name>BED BATH &amp; BEYOND #651</Name>
+      <Name>BOWLING GREEN OH SUPER</Name>
+      <Name>BOWLING GREEN OH SUPER</Name>
+      <Name>carters, Inc.</Name>
+      <Name>carters, Inc.</Name>
+      <Name>carters, Inc.</Name>
+      <Name>carters, Inc.</Name>
+      <Name>Cash Deposit</Name>
+      <Name>Cash Deposit</Name>
       <Name>Cash Withdrawal</Name>
-      <Name>Cash Deposit</Name>
-      <Name>Cash Deposit</Name>
+      <Name>Christmas Gifts</Name>
+      <Name>Christmas Gifts</Name>
+      <Name>CIRCLE K 5657</Name>
+      <Name>CRICUT</Name>
+      <Name>Debby Keiser</Name>
+      <Name>Debby Keiser</Name>
+      <Name>Debby Keiser</Name>
+      <Name>DIETSCH BROTHERS  MAIN</Name>
+      <Name>DIETSCH BROTHERS  MAIN</Name>
+      <Name>DOLLAR GENERAL</Name>
       <Name>EYES ON MAIN VISION CE</Name>
-      <Name>MEIJER IN 2200 TIF</Name>
-      <Name>MR LEE EXPRESS</Name>
-      <Name>PANERA BREAD #872</Name>
-      <Name>PROGRESSIVE *INSURANCE</Name>
-      <Name>SALLY BEAUTY #</Name>
-      <Name>STAPLES 0381</Name>
-      <Name>T J MAXX  1111 S M</Name>
-      <Name>TJ MAXX # 1800 TIF</Name>
-      <Name>TROPICAL SMOOTHIE CAFE</Name>
       <Name>EYES ON MAIN VISION CE</Name>
+      <Name>FINDLAY 12</Name>
+      <Name>FINDLAY 12</Name>
+      <Name>GREAT SCOT # 9</Name>
+      <Name>Hancock County ESC</Name>
+      <Name>Hancock County ESC</Name>
+      <Name>Hancock County ESC</Name>
+      <Name>Home Depot Return</Name>
+      <Name>Home Depot Return</Name>
+      <Name>IMO CARWASH OHIO TIFFI</Name>
+      <Name>Interest Payment</Name>
+      <Name>JIMMY JOHNS - 2540</Name>
+      <Name>JOANN STORES #2448</Name>
+      <Name>JOANN STORES #2448</Name>
+      <Name>Keiser Family Dentistry</Name>
+      <Name>MARATHON PETRO144543</Name>
+      <Name>MARATHON PETRO72504</Name>
+      <Name>MARATHON PETRO95042</Name>
+      <Name>McComb</Name>
+      <Name>McComb Local Schools</Name>
       <Name>MEIJER IN 2200 TIF</Name>
+      <Name>MEIJER IN 2200 TIF</Name>
+      <Name>MEIJER INC #156    Q01</Name>
       <Name>MR LEE EXPRESS</Name>
+      <Name>MR LEE EXPRESS</Name>
+      <Name>Ohio Treasurer of State</Name>
+      <Name>Ohio Treasurer of State</Name>
+      <Name>Ohio Treasurer of State</Name>
+      <Name>Overdraft protection transfer</Name>
       <Name>PANERA BREAD #872</Name>
+      <Name>PANERA BREAD #872</Name>
+      <Name>PIZZA HUT #027255</Name>
       <Name>PROGRESSIVE *INSURANCE</Name>
+      <Name>PROGRESSIVE *INSURANCE</Name>
+      <Name>Ray Keiser</Name>
+      <Name>Ray Keiser</Name>
+      <Name>Ray Keiser</Name>
+      <Name>ROSSILLI'S RESTAURANT</Name>
+      <Name>RTI Survey Incentive Program</Name>
       <Name>SALLY BEAUTY #</Name>
+      <Name>SALLY BEAUTY #</Name>
+      <Name>SALLY BEAUTY #</Name>
+      <Name>SHELL OIL 534267800QPS</Name>
+      <Name>SQ *SQ *THE FARM GIRLS</Name>
+      <Name>SQ *SQ *THE FARM GIRLS</Name>
       <Name>STAPLES 0381</Name>
+      <Name>STAPLES 0381</Name>
+      <Name>STAPLES 0381</Name>
+      <Name>SWEET FROG 300196</Name>
       <Name>T J MAXX  1111 S M</Name>
+      <Name>T J MAXX  1111 S M</Name>
+      <Name>T J MAXX  1111 S M</Name>
+      <Name>T J MAXX  1111 S M</Name>
+      <Name>T J MAXX  1111 S M</Name>
+      <Name>T J MAXX  1111 S M</Name>
+      <Name>TEACHERSPAYTEACHERS.CO</Name>
+      <Name>TEACHERSPAYTEACHERS.CO</Name>
+      <Name>TEACHERSPAYTEACHERS.CO</Name>
+      <Name>TEACHERSPAYTEACHERS.CO</Name>
+      <Name>THE GALLERY SA</Name>
+      <Name>THE GALLERY SA</Name>
+      <Name>THE GALLERY SA</Name>
+      <Name>THE HOME DEPOT #38</Name>
+      <Name>THE HOME DEPOT #38</Name>
+      <Name>THE HOME DEPOT #38</Name>
+      <Name>THE HOME DEPOT #38</Name>
+      <Name>Tiffany Wenning</Name>
       <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>TJMAXX #0 1472 SPR</Name>
+      <Name>TJMAXX #0 1472 SPR</Name>
       <Name>TROPICAL SMOOTHIE CAFE</Name>
-      <Name>STAPLES 0381</Name>
-      <Name>TJ MAXX # 1800 TIF</Name>
-      <Name>SALLY BEAUTY #</Name>
-      <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>TROPICAL SMOOTHIE CAFE</Name>
+      <Name>USPS PO 3808610</Name>
+      <Name>USPS PO 3808610817</Name>
+      <Name>USPS PO 3808610817</Name>
+      <Name>USPS PO 3808610817</Name>
+      <Name>USPS PO 3808610817</Name>
+      <Name>USPS PO 3808610817</Name>
+      <Name>USPS PO 3808610817</Name>
+      <Name>VICTORIA'S SECRET</Name>
+      <Name>VICTORIA'S SECRET</Name>
+      <Name>WAL-MART #1718</Name>
+      <Name>WM SUPERCENTER #3840</Name>
+      <Name>AMAZON MKTPLACE PMTS</Name>
+      <Name>CRICUT</Name>
+      <Name>Debby Keiser</Name>
+      <Name>DIETSCH BROTHERS  MAIN</Name>
+      <Name>DOLLAR GENERAL</Name>
+      <Name>IMO CARWASH OHIO TIFFI</Name>
+      <Name>Overdraft protection transfer</Name>
+      <Name>Ray Keiser</Name>
       <Name>T J MAXX  1111 S M</Name>
+      <Name>THE GALLERY SA</Name>
+      <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>USPS PO 3808610817</Name>
+      <Name>VICTORIA'S SECRET</Name>
+      <Name>AMAZON MKTPLACE PMTS</Name>
+      <Name>CRICUT</Name>
+      <Name>DIETSCH BROTHERS  MAIN</Name>
+      <Name>DOLLAR GENERAL</Name>
+      <Name>IMO CARWASH OHIO TIFFI</Name>
+      <Name>T J MAXX  1111 S M</Name>
+      <Name>THE GALLERY SA</Name>
+      <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>VICTORIA'S SECRET</Name>
+      <Name>DOLLAR GENERAL</Name>
+      <Name>THE GALLERY SA</Name>
+      <Name>T J MAXX  1111 S M</Name>
+      <Name>USPS PO 3808610817</Name>
+      <Name>Ray Keiser</Name>
+      <Name>Debby Keiser</Name>
+      <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>IMO CARWASH OHIO TIFFI</Name>
+      <Name>VICTORIA'S SECRET</Name>
+      <Name>VICTORIA'S SECRET</Name>
+      <Name>AMAZON MKTPLACE PMTS</Name>
+      <Name>CRICUT</Name>
+      <Name>DIETSCH BROTHERS  MAIN</Name>
+      <Name>DIETSCH BROTHERS  MAIN</Name>
     </Payees>
   </Category>
   <Category>
@@ -262,6 +408,7 @@
       <Name>075909 CARMIKE</Name>
       <Name>CINEMARK THEATR</Name>
       <Name>FAMILY VIDEO #8</Name>
+      <Name>FINDLAY 12</Name>
       <Name>MICROSOFT   *XBOXLIVE</Name>
       <Name>TOLEDO ZOO SOCI</Name>
     </Payees>
@@ -272,13 +419,20 @@
     <Budget>0</Budget>
     <Payees>
       <Name>Amazon Digital Ser</Name>
+      <Name>AMAZON MKTPLACE PMTS</Name>
       <Name>BARNES&amp;NOBLE.COM-BN</Name>
+      <Name>BED BATH &amp; BEYOND #651</Name>
       <Name>BOOKS A MILLION</Name>
+      <Name>BOWLING GREEN OH SUPER</Name>
       <Name>CARTER'S #628</Name>
       <Name>CARTERS #833</Name>
+      <Name>carters, Inc.</Name>
+      <Name>carters, Inc.</Name>
       <Name>CHR*CHRISTIANBOOK.COM</Name>
+      <Name>Christmas Gifts</Name>
       <Name>DIETSCH BROTHER</Name>
       <Name>DIETSCH BROTHERS EAST</Name>
+      <Name>DOLLAR GENERAL</Name>
       <Name>DOLLAR TREE</Name>
       <Name>ELDER-BEERMAN #</Name>
       <Name>GAP OUTLET US 7962</Name>
@@ -287,6 +441,7 @@
       <Name>HOBBYLOBBY</Name>
       <Name>HOB-LOB #267</Name>
       <Name>JO-ANN STORE #2</Name>
+      <Name>JOANN STORES #2448</Name>
       <Name>JOURNEY SALON A</Name>
       <Name>KOHLS 0222</Name>
       <Name>LENNARD S GREEN</Name>
@@ -308,23 +463,43 @@
       <Name>PERSONALIZATION MALL</Name>
       <Name>PPL*BEACHBODY FITNESS</Name>
       <Name>READMORES HALLM</Name>
+      <Name>SALLY BEAUTY #</Name>
       <Name>SHOE MALL #10</Name>
+      <Name>SQ *SQ *THE FARM GIRLS</Name>
+      <Name>STAPLES 0381</Name>
       <Name>SUMMIT SALON AC</Name>
       <Name>SURPRISE!!!!!!!</Name>
       <Name>SWEETWATER SOUND INC</Name>
+      <Name>T J MAXX  1111 S M</Name>
+      <Name>T J MAXX  1111 S M</Name>
+      <Name>T J MAXX  1111 S M</Name>
       <Name>T J MAXX  1111 S MAIN</Name>
+      <Name>TEACHERSPAYTEACHERS.CO</Name>
+      <Name>TEACHERSPAYTEACHERS.CO</Name>
+      <Name>THE GALLERY SA</Name>
+      <Name>THE GALLERY SA</Name>
       <Name>THE GALLERY SALON &amp; SP</Name>
+      <Name>THE HOME DEPOT #38</Name>
       <Name>THE HOME DEPOT #3864</Name>
+      <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>TJ MAXX # 1800 TIF</Name>
       <Name>TJ MAXX # 1800 TIFFIN</Name>
       <Name>TJ MAXX #706</Name>
+      <Name>TJMAXX #0 1472 SPR</Name>
       <Name>TOYSRUS-BABIESRUS</Name>
+      <Name>VICTORIA'S SECRET</Name>
       <Name>VICTORIA'S SECRET 0647</Name>
       <Name>WALMART.COM</Name>
       <Name>X3WATCH626-676-2004</Name>
-      <Name>SALLY BEAUTY #</Name>
-      <Name>STAPLES 0381</Name>
+      <Name>AMAZON MKTPLACE PMTS</Name>
+      <Name>DIETSCH BROTHERS  MAIN</Name>
+      <Name>DOLLAR GENERAL</Name>
       <Name>T J MAXX  1111 S M</Name>
+      <Name>THE GALLERY SA</Name>
       <Name>TJ MAXX # 1800 TIF</Name>
+      <Name>VICTORIA'S SECRET</Name>
     </Payees>
   </Category>
   <Category>
@@ -361,8 +536,10 @@
       <Name>8301OHIO-DPSOPLT OPLATES</Name>
       <Name>AUTOZONE  1304 TIFFIN</Name>
       <Name>BMV</Name>
+      <Name>IMO CARWASH OHIO TIFFI</Name>
       <Name>OH BUREAU MOTOR VEHICL</Name>
       <Name>TIREMAN AUTO SE</Name>
+      <Name>IMO CARWASH OHIO TIFFI</Name>
     </Payees>
   </Category>
   <Category>
@@ -370,8 +547,27 @@
     <Type>2</Type>
     <Budget>0</Budget>
     <Payees>
-      <Name>Reiske Lessons</Name>
       <Name>Cash Deposit</Name>
+      <Name>Reiske Lessons</Name>
+    </Payees>
+  </Category>
+  <Category>
+    <Name>Refund</Name>
+    <Type>2</Type>
+    <Budget>0</Budget>
+    <Payees>
+      <Name>Home Depot Return</Name>
+    </Payees>
+  </Category>
+  <Category>
+    <Name>Christmas Shopping</Name>
+    <Type>1</Type>
+    <Budget>0</Budget>
+    <Payees>
+      <Name>AMAZON.COM AMZN.COM/BI</Name>
+      <Name>CRICUT</Name>
+      <Name>DIETSCH BROTHERS  MAIN</Name>
+      <Name>CRICUT</Name>
     </Payees>
   </Category>
 </MonthlyBudget>
